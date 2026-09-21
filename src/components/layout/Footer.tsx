@@ -10,7 +10,7 @@ export function Footer({ onOpenResumeModal }: { onOpenResumeModal: () => void })
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 py-10 text-slate-600">
+    <footer className="border-t border-slate-200/50 py-12 text-slate-600">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-200/80">
           {/* Brand Info */}

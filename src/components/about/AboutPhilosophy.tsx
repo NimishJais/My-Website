@@ -5,23 +5,26 @@ import { SectionHeading } from "../ui/SectionHeading";
 
 export function AboutPhilosophy() {
   return (
-    <section id="about" className="py-14 md:py-18 bg-white border-b border-slate-200/80">
+    <section id="about" className="py-16 md:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <SectionHeading
           badge="About Me"
           title="Professional Background"
         />
 
-        {/* Clean Cardless Prose */}
+        {/* Clean 3-Pillar Prose Aligned with Plan.md */}
         <div className="space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
           <p>
-            I am an <strong className="text-slate-900 font-semibold">Associate Technical Analyst at Sapiens Technologies</strong> in Bangalore, specializing in GhostDraft CCM document automation, XSLT data mapping, and P&C Insurance workflows.
+            I am an <strong className="text-slate-900 font-semibold">Technical Analyst at Sapiens Technologies</strong> in Bangalore with 1.5+ years of multinational corporate experience spanning enterprise document automation, large-scale system integrations, and cutting-edge autonomous AI engineering.
           </p>
           <p>
-            My core responsibilities involve authoring complex document templates, rule-based logic, and dynamic forms, as well as transforming structured XML payloads and database sources via XSLT stylesheets.
+            As a <strong className="text-teal-900 font-semibold bg-teal-50 px-1.5 py-0.5 rounded border border-teal-100">GhostDraft Developer</strong>, I author complex dynamic templates, rule-based document logic. I have worked with building Ghostdraft Workflows, I-frame, Integrating AWS S3 bucket for forms storage, and complex scripting and mapping received Bravo Award for faster and effecient delivery.
           </p>
           <p>
-            I configure and maintain integrations connecting GhostDraft with core enterprise product modules (Policy, Billing, Claims) and external systems via REST/SOAP APIs and AWS S3 cloud storage workflows.
+            As an <strong className="text-sky-900 font-semibold bg-sky-50 px-1.5 py-0.5 rounded border border-sky-100">Implementation Engineer (System Integrations)</strong>, I architect and maintain mission-critical integrations connecting core insurance product modules (Policy, Billing, Claims) with external systems and REST/SOAP APIs—earning.
+          </p>
+          <p>
+            As an <strong className="text-purple-900 font-semibold bg-purple-50 px-1.5 py-0.5 rounded border border-purple-100">AI Engineer</strong>, I am officially certified as an <em>AI Coder by Ed Donner</em> and actively advancing through core-track LLM Engineering. I aggressively build, fine-tune, and deploy autonomous AI agents, tool-calling chains, and automated developer copilots that bridge legacy enterprise systems with modern artificial intelligence.
           </p>
         </div>
       </div>

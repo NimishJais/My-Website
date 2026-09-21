@@ -17,7 +17,7 @@ export function ExperienceTimeline() {
   const [activeTab, setActiveTab] = useState<"experience" | "education">("experience");
 
   return (
-    <section id="experience" className="py-14 md:py-20 bg-white border-b border-slate-200/80">
+    <section id="experience" className="py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeading
           badge="Career & Education"

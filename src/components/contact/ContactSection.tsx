@@ -54,7 +54,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-14 md:py-20 bg-slate-50/70 border-b border-slate-200/80">
+    <section id="contact" className="py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeading
           badge="Get In Touch"

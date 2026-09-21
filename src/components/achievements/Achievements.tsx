@@ -33,7 +33,7 @@ export function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="py-14 md:py-18 bg-white border-b border-slate-200/80">
+    <section id="achievements" className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <SectionHeading
           badge="Honors & Certifications"

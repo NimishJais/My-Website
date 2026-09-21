@@ -41,9 +41,9 @@ export interface EducationItem {
 
 export const PERSONAL_INFO = {
   name: "Nimish Jais",
-  title: "Associate Technical Analyst & Enterprise Document Automation Engineer",
+  title: "GhostDraft Developer • AI Engineer • System Implementation Specialist",
   company: "Sapiens Technologies",
-  tagline: "Bridging High-Throughput Enterprise Architecture & Modern Full-Stack Agility",
+  tagline: "High-Throughput Enterprise Architecture, System Integrations & Autonomous AI Engineering",
   email: "Jaisnimish@gmail.com",
   phone: "+91-7666750048",
   location: "Bangalore, India",
@@ -52,16 +52,29 @@ export const PERSONAL_INFO = {
   github: "https://github.com/",
   leetcode: "https://leetcode.com/",
   resumePdfUrl: "/Nimish_Jais_Resume.pdf",
-  bio: `Technical Implementation Engineer with 1.5+ years of experience at Sapiens specializing in GhostDraft CCM document automation, XSLT data mapping, and P&C Insurance workflows. Proven track record in configuring enterprise modules, resolving complex XML/API integration defects, and delivering zero-defect production releases ahead of schedule.`,
+  bio: `Enterprise Engineer with 1.5+ years of MNC experience at Sapiens Technologies specializing in GhostDraft CCM document automation, complex XSLT mapping, and system integrations (REST/SOAP, AWS S3). Certified AI Coder by Ed Donner and Core Track LLM Engineer, actively building and deploying autonomous AI agents with zero production defects.`,
   stats: [
     { label: "Enterprise Experience", value: "1.5+", unit: "Years" },
-    { label: "Production Rollouts", value: "Zero", unit: "Defects" },
-    { label: "LeetCode Problems", value: "200+", unit: "Solved" },
+    { label: "Production Defects", value: "Zero", unit: "Defects" },
+    { label: "LeetCode Solved", value: "200+", unit: "Problems" },
     { label: "Record Holder", value: "Asia Book", unit: "of Records" },
   ]
 };
 
 export const SKILL_CATEGORIES = [
+  {
+    category: "AI Engineering & Agentic Systems",
+    icon: "Bot",
+    description: "Autonomous agent orchestration, modern LLM integration, prompt engineering, and intelligent workflow automation.",
+    skills: [
+      { name: "Autonomous AI Agents & Workflows", level: 94, highlight: true },
+      { name: "Certified AI Coder (Ed Donner)", level: 96, highlight: true },
+      { name: "Core Track LLM Engineering", level: 90, highlight: true },
+      { name: "Prompt Engineering & Evaluation", level: 92, highlight: true },
+      { name: "LangChain, RAG & Vector Search", level: 86, highlight: false },
+      { name: "Python & TypeScript AI Tooling", level: 88, highlight: false },
+    ]
+  },
   {
     category: "Document Automation & CCM",
     icon: "FileCode2",
@@ -76,16 +89,16 @@ export const SKILL_CATEGORIES = [
     ]
   },
   {
-    category: "Programming & Data Logic",
-    icon: "Code",
-    description: "Core algorithmic thinking, robust backend services, and structured schema processing.",
+    category: "System Integrations & Cloud",
+    icon: "Cloud",
+    description: "Connecting enterprise engines with modern cloud storage, asynchronous messaging, and robust APIs.",
     skills: [
-      { name: "Java", level: 88, highlight: true },
-      { name: "XML & XPath", level: 95, highlight: true },
-      { name: "JSON & Schema Design", level: 92, highlight: true },
-      { name: "SQL & Relational DBs", level: 85, highlight: true },
-      { name: "TypeScript / JavaScript", level: 82, highlight: false },
-      { name: "Data Structures & Algorithms", level: 88, highlight: false },
+      { name: "REST & SOAP API Integrations", level: 92, highlight: true },
+      { name: "AWS S3 Integration Pipelines", level: 88, highlight: true },
+      { name: "XML & XPath Payload Mapping", level: 95, highlight: true },
+      { name: "Java & Microservices Backend", level: 88, highlight: true },
+      { name: "Root-Cause Log Diagnostics", level: 94, highlight: true },
+      { name: "Git, Agile & JIRA Workflows", level: 92, highlight: false },
     ]
   },
   {
@@ -99,19 +112,6 @@ export const SKILL_CATEGORIES = [
       { name: "Claims Processing & Settlements", level: 89, highlight: true },
       { name: "Sapiens Suite / Guidewire Equiv.", level: 92, highlight: true },
       { name: "Enterprise Compliance & SLA Delivery", level: 95, highlight: false },
-    ]
-  },
-  {
-    category: "Cloud, APIs & DevOps",
-    icon: "Cloud",
-    description: "Connecting enterprise engines with modern cloud storage, asynchronous messaging, and CI/CD.",
-    skills: [
-      { name: "REST & SOAP APIs", level: 92, highlight: true },
-      { name: "AWS S3 Integration", level: 88, highlight: true },
-      { name: "Git & Version Control", level: 90, highlight: false },
-      { name: "Agile / Scrum & JIRA", level: 92, highlight: false },
-      { name: "Root-Cause Log Diagnostics", level: 94, highlight: true },
-      { name: "Full-Stack Workflows (MERN, Spring)", level: 85, highlight: false },
     ]
   }
 ];
@@ -191,7 +191,7 @@ export const PROJECTS: ProjectItem[] = [
     category: "Enterprise",
     tagline: "Rule-Based XML/XSLT Transformation & Cloud S3 Archival Engine",
     description: "High-throughput document composition platform connecting enterprise P&C Insurance modules with dynamic PDF and multi-channel rendering engines.",
-    longDescription: "Orchestrates end-to-end document lifecycles for high-volume insurance carriers. Receives transactional XML payloads from Policy, Billing, and Claims systems, executes rule-based XSLT data transformations, applies dynamic template branding, and automatically persists compliance-ready documents directly into AWS S3 storage with comprehensive audit logging.",
+    longDescription: "Orchestrates end-to-end document lifecycles for high-volume insurance carriers at Sapiens. Receives transactional XML payloads from Policy, Billing, and Claims systems, executes rule-based XSLT data transformations, applies dynamic template branding, and automatically persists compliance-ready documents directly into AWS S3 storage with comprehensive audit logging.",
     technologies: ["GhostDraft CCM", "XSLT 2.0", "Java", "XML/XPath", "AWS S3", "REST/SOAP", "P&C Insurance"],
     metrics: "Zero-defect delivery • 100% compliance mapping",
     featured: true,
@@ -204,61 +204,53 @@ export const PROJECTS: ProjectItem[] = [
     ]
   },
   {
-    id: "library-mgmt-system",
-    title: "Full-Stack Operational Dashboard & Resource Tracker",
+    id: "ai-agent-copilot",
+    title: "Autonomous AI Agent Workflow & Schema Copilot",
     category: "Full-Stack",
-    tagline: "Secure Member Administration & Resource Orchestration Platform",
-    description: "Full-stack operational dashboard to automate public utility workflows, asset tracking, and role-based member administration.",
-    longDescription: "Engineered a production-ready administrative system featuring fine-grained Role-Based Access Control (RBAC), JWT token authentication, real-time inventory tracking, member profile lifecycle management, and relational database persistence with strict constraint validations.",
-    technologies: ["React", "Node.js", "Java / Spring Boot", "JWT Auth", "SQL Database", "REST APIs", "Tailwind CSS"],
-    metrics: "Sub-100ms query latency • Granular RBAC",
+    tagline: "LLM Agent Orchestrator, Schema Transformation & Synthetic Testing",
+    description: "Production-grade autonomous AI agent system engineered with LLM tool-calling to automate schema mapping, code generation, and regression testing.",
+    longDescription: "Engineered by applying advanced agentic architectures (certified by Ed Donner). Deploys multi-agent collaborative workflows that ingest enterprise JSON/XML schemas, orchestrate LLM tool-calling chains, generate validated mapping code, and automatically generate synthetic payloads to stress-test system boundary conditions.",
+    technologies: ["AI Agents", "Python", "TypeScript", "LLM APIs", "LangChain", "Next.js", "Vector DBs"],
+    metrics: "Live on Web • 85% accelerated mapping",
     featured: true,
-    status: "Completed",
+    status: "Production",
+    architectureHighlights: [
+      "Multi-agent autonomous workflow utilizing dynamic tool-calling and self-correction loops",
+      "Real-time AST schema analysis and automatic transformation logic synthesis",
+      "Synthetic test payload generation simulating edge-case enterprise data scenarios",
+      "Streaming responses with low-latency client-side state synchronization"
+    ]
+  },
+  {
+    id: "system-integration-hub",
+    title: "Enterprise System Integration & Operational Hub",
+    category: "Full-Stack",
+    tagline: "Secure REST/SOAP Integration, Token Auth & Resource Orchestration",
+    description: "Full-stack operational hub connecting distributed services, orchestrating transactional workflows, and providing real-time telemetry.",
+    longDescription: "Engineered a robust system integration platform featuring fine-grained Role-Based Access Control (RBAC), JWT token authentication, real-time inventory tracking, member profile lifecycle management, and relational database persistence with strict constraint validations.",
+    technologies: ["React", "Node.js", "Java / Spring Boot", "JWT Auth", "SQL Database", "REST APIs", "Tailwind CSS"],
+    metrics: "Sub-100ms latency • Live Production Deployment",
+    featured: true,
+    status: "Production",
     github: "https://github.com/",
     architectureHighlights: [
       "JWT-based stateless authentication with token rotation and permission middleware",
-      "Optimized SQL indexing and relational schema for high-concurrency borrowing workflows",
+      "Optimized SQL indexing and relational schema for high-concurrency transactional workflows",
       "Responsive operational dashboard with real-time asset tracking and telemetry",
-      "Automated overdue calculation algorithms and automated email dispatch triggers"
-    ]
-  },
-  {
-    id: "decentralized-doc-verify",
-    title: "Zero-Trust Document Verification & Integrity Layer",
-    category: "Upcoming",
-    tagline: "Cryptographic Hashing & Tamper-Proof Insurance Artifacts",
-    description: "Futuristic microservice for generating SHA-256 cryptographic verification proofs and audit trails for generated enterprise PDF contracts.",
-    longDescription: "Designed as an immutable ledger add-on to enterprise CCM pipelines, this system calculates digital fingerprints for every generated policy and claim document, allowing external auditors and policyholders to instantly verify authenticity via zero-trust QR anchors.",
-    technologies: ["TypeScript", "Next.js", "Cryptography", "AWS Lambda", "Microservices"],
-    metrics: "In Architecture Phase",
-    featured: false,
-    status: "Research",
-    architectureHighlights: [
-      "SHA-256 Merkle-tree verification for high-volume document batches",
-      "QR Code instant scan anchor embedded inside GhostDraft document footers",
-      "Zero-knowledge audit logs for compliance regulators"
-    ]
-  },
-  {
-    id: "ai-xslt-copilot",
-    title: "AI-Assisted Schema & XSLT Transformation Studio",
-    category: "Upcoming",
-    tagline: "Visual Data Mapping & Synthetic XML Payload Debugger",
-    description: "Next-generation developer tool providing visual schema diffing, automated XSLT snippet generation, and synthetic test payload synthesis.",
-    longDescription: "A developer productivity accelerator engineered to ingest raw enterprise JSON/XML schemas and automatically generate clean, standards-compliant XSLT stylesheets while highlighting regression edge-cases before deployment.",
-    technologies: ["Next.js", "WebAssembly", "LLM APIs", "Monaco Editor", "Tailwind CSS"],
-    metrics: "Roadmap 2026",
-    featured: false,
-    status: "In Development",
-    architectureHighlights: [
-      "Client-side Monaco code editor with real-time XSLT/XPath syntax validation",
-      "Synthetic XML payload generator for stress testing boundary conditions",
-      "Interactive AST visualizer for complex document structure trees"
+      "Automated event-driven notification triggers and external service webhooks"
     ]
   }
 ];
 
 export const AWARDS_AND_HONORS = [
+  {
+    id: "ai-coder-cert",
+    title: "Certified AI Coder",
+    organization: "Ed Donner / AI Engineering",
+    year: "2025",
+    type: "AI & LLM Credentials",
+    description: "Officially certified in advanced AI agent engineering, LLM application architecture, and autonomous AI-assisted software development by Ed Donner; active Core Track LLM Engineer."
+  },
   {
     id: "bravo-award",
     title: "Company Bravo Award",

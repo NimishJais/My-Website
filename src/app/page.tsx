@@ -16,12 +16,12 @@ export default function Home() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] text-slate-900 relative selection:bg-blue-100 selection:text-blue-900">
+    <main className="min-h-screen bg-transparent text-slate-900 relative selection:bg-blue-100 selection:text-blue-900">
       {/* Navigation */}
       <Navbar onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 
       {/* Hero Section */}
-      <Hero />
+      <Hero onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 
       {/* About Section */}
       <AboutPhilosophy />
