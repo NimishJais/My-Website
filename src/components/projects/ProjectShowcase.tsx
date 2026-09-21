@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { PROJECTS, ProjectItem } from "@/data/portfolioData";
 import {
-  Layers,
   CheckCircle2,
   Clock,
   ArrowRight,
@@ -14,6 +13,20 @@ import {
 
 export function ProjectShowcase() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
+  // Subtle 3D tilt: card leans toward the cursor, springs back on leave.
+  const handleCardTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(1000px) rotateX(${(-py * 3.5).toFixed(2)}deg) rotateY(${(px * 3.5).toFixed(2)}deg) translateY(-3px)`;
+  };
+
+  const resetCardTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = "";
+  };
 
   return (
     <section id="projects" className="py-16 md:py-24">
@@ -29,7 +42,9 @@ export function ProjectShowcase() {
             return (
               <div
                 key={project.id}
-                className="p-6 md:p-8 rounded-2xl border border-slate-200 bg-white shadow-xs hover:border-teal-300 hover:shadow-sm transition-all"
+                onMouseMove={handleCardTilt}
+                onMouseLeave={resetCardTilt}
+                className="tilt-card p-6 md:p-8 rounded-2xl border border-slate-200 bg-white shadow-xs"
               >
                 {/* Top Status & Category */}
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-3 border-b border-slate-100">
@@ -39,10 +54,10 @@ export function ProjectShowcase() {
 
                   <span
                     className={`text-xs px-2.5 py-0.5 rounded-full flex items-center gap-1.5 font-medium ${project.status === "Production"
-                      ? "bg-teal-50 text-teal-800 border border-teal-200"
-                      : project.status === "Completed"
-                        ? "bg-sky-50 text-sky-800 border border-sky-200"
-                        : "bg-purple-50 text-purple-800 border border-purple-200"
+                        ? "bg-teal-50 text-teal-800 border border-teal-200"
+                        : project.status === "Completed"
+                          ? "bg-sky-50 text-sky-800 border border-sky-200"
+                          : "bg-purple-50 text-purple-800 border border-purple-200"
                       }`}
                   >
                     {project.status === "Production" ? (
@@ -66,19 +81,6 @@ export function ProjectShowcase() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
                   {project.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="space-y-1.5 mb-5 p-4 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <div className="text-[11px] font-bold uppercase text-slate-500 flex items-center gap-1 mb-1.5">
-                    <Layers className="w-3.5 h-3.5 text-teal-600" /> Key Architectural Highlights:
-                  </div>
-                  {project.architectureHighlights.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                      <span className="text-teal-600 font-bold">•</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
 
                 {/* Tech Tags & CTA Bar */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-slate-100">
