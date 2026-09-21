@@ -158,7 +158,7 @@ export function PipelineVisualizer() {
             {activeStep === 3 && "Step 3: GhostDraft CCM Composition"}
             {activeStep === 4 && "Step 4: AWS S3 Cloud Storage Destination"}
           </span>
-          <span className="text-[11px] text-emerald-400 flex items-center gap-1 font-sans font-medium">
+          <span className="text-[11px] text-green-400 flex items-center gap-1 font-sans font-medium">
             <CheckCircle2 className="w-3.5 h-3.5" />
             <span>Validated</span>
           </span>
@@ -173,7 +173,7 @@ export function PipelineVisualizer() {
           )}
           {activeStep === 3 && (
             <div className="space-y-1.5 font-sans text-xs">
-              <div className="text-emerald-400 font-semibold">✓ Generated: {selectedScenario.outputDoc}</div>
+              <div className="text-green-400 font-semibold">✓ Generated: {selectedScenario.outputDoc}</div>
               <div className="text-slate-300">→ Dynamic rules applied for state regulatory compliance</div>
               <div className="text-slate-400 text-[11px]">→ Multi-channel print stream & high-resolution PDF rendering</div>
             </div>

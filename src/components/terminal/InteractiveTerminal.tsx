@@ -119,14 +119,14 @@ export function InteractiveTerminal({ onOpenResumeModal }: { onOpenResumeModal: 
         {/* Terminal Window Box */}
         <div
           onClick={() => inputRef.current?.focus()}
-          className="rounded-2xl border border-cyan-500/30 bg-[#06080d] shadow-[0_0_50px_rgba(0,242,254,0.15)] overflow-hidden font-mono text-xs cursor-text"
+          className="rounded-2xl border border-cyan-500/30 bg-[#06080d] shadow-[0_0_50px_rgba(249,115,22,0.15)] overflow-hidden font-mono text-xs cursor-text"
         >
           {/* Terminal Window Titlebar */}
           <div className="flex items-center justify-between px-4 py-3 bg-[#0d121c] border-b border-white/[0.08]">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+              <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
               <span className="text-slate-400 text-xs ml-2 font-medium">
                 guest@nimish-jais-macbook: ~
               </span>
@@ -143,7 +143,7 @@ export function InteractiveTerminal({ onOpenResumeModal }: { onOpenResumeModal: 
             {history.map((item) => (
               <div key={item.id} className="space-y-1">
                 <div className="flex items-center gap-2 text-cyan-400">
-                  <span className="text-emerald-400 font-bold">nimish@terminal:~$</span>
+                  <span className="text-green-400 font-bold">nimish@terminal:~$</span>
                   <span className="text-slate-100">{item.command}</span>
                 </div>
 
@@ -163,7 +163,7 @@ export function InteractiveTerminal({ onOpenResumeModal }: { onOpenResumeModal: 
 
             {/* Input Prompt Row */}
             <div className="flex items-center gap-2 pt-2">
-              <span className="text-emerald-400 font-bold shrink-0">nimish@terminal:~$</span>
+              <span className="text-green-400 font-bold shrink-0">nimish@terminal:~$</span>
               <input
                 ref={inputRef}
                 type="text"

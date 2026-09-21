@@ -26,6 +26,22 @@ export function SectionHeading({
       <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
         {cleanTitle}
       </h2>
+
+      {/* Hand-drawn warm underline flourish */}
+      <svg
+        viewBox="0 0 120 12"
+        aria-hidden
+        className={`h-2.5 w-28 mt-1.5 ${isCenter ? "mx-auto" : ""}`}
+      >
+        <path
+          d="M3 8.5 C 28 3.5, 52 10, 78 6.5 S 108 4, 117 6"
+          stroke="#d97706"
+          strokeWidth="4"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.5"
+        />
+      </svg>
     </div>
   );
 }

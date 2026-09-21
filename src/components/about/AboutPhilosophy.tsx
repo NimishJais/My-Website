@@ -27,6 +27,18 @@ export function AboutPhilosophy() {
             As an <strong className="text-purple-900 font-semibold bg-purple-50 px-1.5 py-0.5 rounded border border-purple-100">AI Engineer</strong>, I am officially certified as an <em>AI Coder by Ed Donner</em> and actively advancing through core-track LLM Engineering. I aggressively build, fine-tune, and deploy autonomous AI agents, tool-calling chains, and automated developer copilots that bridge legacy enterprise systems with modern artificial intelligence.
           </p>
         </div>
+
+        {/* Currently exploring */}
+        <div className="mt-8 flex items-center gap-3 rounded-2xl border border-amber-200/70 bg-amber-50/60 px-5 py-4">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500" />
+          </span>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            <span className="font-semibold text-slate-900">Currently exploring:</span>{" "}
+            advanced LLM agents, RAG pipelines, and AI-assisted development workflows.
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Hero3DDome } from "./Hero3DDome";
-import { ArrowRight, FileText, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
   onOpenResumeModal?: () => void;
@@ -84,86 +84,138 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative pt-36 sm:pt-44 md:pt-[36vh] lg:pt-[38vh] pb-28 md:pb-36 overflow-x-clip"
+      className="relative pt-28 sm:pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-x-clip"
     >
-      {/* Ambient Theme 4-Color Radiance Backdrop (Feathered seamlessly at bottom) */}
+      {/* Ambient Warm Radiance Backdrop (Feathered seamlessly at bottom) */}
       <div
-        className="absolute inset-x-0 bottom-0 h-[520px] pointer-events-none z-0 opacity-60"
+        className="absolute inset-x-0 top-0 h-[640px] pointer-events-none z-0 opacity-60"
         style={{
-          background: "radial-gradient(ellipse 75% 55% at 50% 45%, rgba(45, 212, 191, 0.12) 0%, rgba(56, 189, 248, 0.09) 35%, rgba(168, 85, 247, 0.06) 65%, transparent 100%)",
-          maskImage: "linear-gradient(to bottom, black 40%, transparent 90%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 90%)"
+          background: "radial-gradient(ellipse 75% 55% at 50% 40%, rgba(245, 158, 11, 0.10) 0%, rgba(253, 186, 116, 0.10) 35%, rgba(253, 230, 211, 0.08) 65%, transparent 100%)",
+          maskImage: "linear-gradient(to bottom, black 40%, transparent 95%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 40%, transparent 95%)"
         }}
       />
 
-      {/* 3D Radiating Kinetic Dome (Smoothly dissolved into the background with zero hard cutoff) */}
-      <div
-        className="absolute left-1/2 -translate-x-1/2 bottom-[-30px] sm:bottom-[-45px] md:bottom-[-60px] w-[750px] sm:w-[980px] md:w-[1250px] h-[500px] sm:h-[560px] md:h-[620px] pointer-events-none z-0"
-        style={{
-          maskImage: "linear-gradient(to bottom, black 0%, black 18%, rgba(0, 0, 0, 0.85) 32%, rgba(0, 0, 0, 0.45) 48%, rgba(0, 0, 0, 0.12) 65%, transparent 78%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 18%, rgba(0, 0, 0, 0.85) 32%, rgba(0, 0, 0, 0.45) 48%, rgba(0, 0, 0, 0.12) 65%, transparent 78%)"
-        }}
-      >
-        <Hero3DDome />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        {/* Main Headline with Left-to-Right Typewriter Animation */}
-        <div className="min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5rem] flex items-center justify-center mb-2">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight inline-flex items-center">
-            <span>{displayedText}</span>
-            <span
-              className={`inline-block w-1 md:w-1.5 h-9 sm:h-12 md:h-14 bg-teal-600 ml-1.5 rounded-sm ${isTypingComplete ? "animate-pulse" : ""
-                }`}
-            />
-          </h1>
-        </div>
-
-        {/* Dynamic "Looking for..." Recruiter Matcher */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-600 font-medium mb-3 min-h-[36px]"
-        >
-          <span className="text-slate-500">Looking for {roles[currentRoleIndex].prefix}</span>
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={currentRoleIndex}
-              initial={{ opacity: 0, y: 6, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -6, scale: 0.95 }}
-              transition={{ duration: 0.28, ease: "easeOut" }}
-              className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border shadow-xs font-bold text-xs sm:text-sm transition-all ${roles[currentRoleIndex].className}`}
-            >
-              <span className={`w-2 h-2 rounded-full ${roles[currentRoleIndex].dot} animate-pulse`} />
-              <span>{roles[currentRoleIndex].title}</span>
-            </motion.span>
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Direct Action CTA Buttons for Recruiters & HR */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-3 mb-10 flex-wrap"
-        >
-          <a
-            href="#contact"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs hover:-translate-y-0.5 hover:shadow-md"
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          {/* Left: Aesthetic realistic desk photo (below text on mobile) */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="order-2 lg:order-1 relative"
           >
-            <span>Get in Touch</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </motion.div>
+            {/* Soft warm lamp-like glow behind the photo */}
+            <div
+              aria-hidden
+              className="absolute -inset-8 rounded-full pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(245, 158, 11, 0.16) 0%, rgba(253, 186, 116, 0.10) 55%, transparent 100%)",
+                filter: "blur(28px)",
+              }}
+            />
+            {/* Feathered mask melts the photo into the warm cream background */}
+            <div
+              className="relative"
+              style={{
+                maskImage: "radial-gradient(ellipse 80% 74% at 50% 45%, black 52%, transparent 80%)",
+                WebkitMaskImage: "radial-gradient(ellipse 80% 74% at 50% 45%, black 52%, transparent 80%)",
+              }}
+            >
+              <Image
+                src="/hero-desk.jpg"
+                alt="Nimish's cozy developer workstation with laptop, vertical monitor, and coffee"
+                width={1920}
+                height={1280}
+                priority
+                className="w-full h-auto object-cover aspect-[3/2]"
+              />
+            </div>
+
+            {/* Floating glass badge: availability */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-8 left-8 flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/70 backdrop-blur-md border border-white/60 shadow-lg shadow-slate-900/5 text-xs font-semibold text-slate-800"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+              </span>
+              Available to Hire
+            </motion.div>
+
+            {/* Floating glass badge: experience */}
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-8 right-8 px-3.5 py-2 rounded-full bg-white/70 backdrop-blur-md border border-white/60 shadow-lg shadow-slate-900/5 text-xs font-semibold text-slate-800"
+            >
+              1.5+ yrs experience
+            </motion.div>
+
+          </motion.div>
+
+          {/* Right: Original text content (first on mobile) */}
+          <div className="order-1 lg:order-2 text-center lg:text-left">
+            {/* Main Headline with Left-to-Right Typewriter Animation */}
+            <div className="min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5rem] flex items-center justify-center lg:justify-start mb-2">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight inline-flex items-center">
+                <span>{displayedText}</span>
+                <span
+                  className={`inline-block w-1 md:w-1.5 h-9 sm:h-12 md:h-14 bg-teal-600 ml-1.5 rounded-sm ${isTypingComplete ? "animate-pulse" : ""
+                    }`}
+                />
+              </h1>
+            </div>
+
+            {/* Dynamic "Looking for..." Recruiter Matcher */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-slate-600 font-medium mb-3 min-h-[36px]"
+            >
+              <span className="text-slate-500">Looking for {roles[currentRoleIndex].prefix}</span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentRoleIndex}
+                  initial={{ opacity: 0, y: 6, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -6, scale: 0.95 }}
+                  transition={{ duration: 0.28, ease: "easeOut" }}
+                  className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border shadow-xs font-bold text-xs sm:text-sm transition-all ${roles[currentRoleIndex].className}`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${roles[currentRoleIndex].dot} animate-pulse`} />
+                  <span>{roles[currentRoleIndex].title}</span>
+                </motion.span>
+              </AnimatePresence>
+            </motion.div>
+
+            {/* Direct Action CTA Buttons for Recruiters & HR */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex items-center justify-center lg:justify-start gap-3 mb-2 flex-wrap"
+            >
+              <a
+                href="#contact"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span>Get in Touch</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
+          </div>
+        </div>
 
         {/* Standardized 4 Profile Cards with Consistent Internal Padding */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-200/50"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 max-w-4xl mx-auto mt-12 pt-6 border-t border-slate-200/50"
         >
           {stats.map((st, i) => (
             <div

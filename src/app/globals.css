@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
+  --background: #faf5eb;
   --surface: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #334155;
   --text-muted: #64748b;
-  --teal-accent: #0d9488;
-  --blue-accent: #0284c7;
-  --purple-accent: #7c3aed;
+  --teal-accent: #d97706;
+  --blue-accent: #ea580c;
+  --purple-accent: #e11d48;
   --green-accent: #059669;
 }
 
@@ -23,17 +23,17 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light;
-  background-color: #f8fafc;
+  background-color: #faf5eb;
 }
 
 body {
-  background-color: #f8fafc !important;
-  background-image: 
-    radial-gradient(at 15% 10%, rgba(204, 251, 241, 0.55) 0px, transparent 48%),
-    radial-gradient(at 85% 18%, rgba(224, 231, 255, 0.55) 0px, transparent 48%),
-    radial-gradient(at 50% 50%, rgba(243, 232, 255, 0.45) 0px, transparent 52%),
-    radial-gradient(at 15% 82%, rgba(204, 251, 241, 0.45) 0px, transparent 50%),
-    radial-gradient(at 85% 85%, rgba(224, 231, 255, 0.45) 0px, transparent 50%);
+  background-color: #faf5eb !important;
+  background-image:
+    radial-gradient(at 15% 10%, rgba(253, 230, 211, 0.65) 0px, transparent 48%),
+    radial-gradient(at 85% 18%, rgba(253, 224, 171, 0.55) 0px, transparent 48%),
+    radial-gradient(at 50% 50%, rgba(255, 247, 237, 0.7) 0px, transparent 52%),
+    radial-gradient(at 15% 82%, rgba(254, 235, 200, 0.5) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(253, 214, 170, 0.45) 0px, transparent 50%);
   background-attachment: fixed;
   color: #0f172a !important;
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
@@ -55,31 +55,34 @@ button {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #faf5eb;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #e0d3ba;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #c9b795;
 }
 
 ::selection {
-  background: rgba(14, 165, 233, 0.2);
-  color: #0369a1;
+  background: rgba(217, 119, 6, 0.18);
+  color: #92400e;
 }
 
-/* Soft Light Mesh Background (3 Shades: Mint/Teal, Sky Blue, Violet/Purple) */
+/* Soft Warm Mesh Background (3 Shades: Peach, Amber, Cream) */
 .light-mesh-bg {
-  background-color: #f8fafc;
-  background-image: 
-    radial-gradient(at 15% 10%, rgba(204, 251, 241, 0.55) 0px, transparent 48%),
-    radial-gradient(at 85% 18%, rgba(224, 231, 255, 0.55) 0px, transparent 48%),
-    radial-gradient(at 50% 50%, rgba(243, 232, 255, 0.45) 0px, transparent 52%),
-    radial-gradient(at 15% 82%, rgba(204, 251, 241, 0.45) 0px, transparent 50%),
-    radial-gradient(at 85% 85%, rgba(224, 231, 255, 0.45) 0px, transparent 50%);
+  background-color: #faf5eb;
+  background-image:
+    radial-gradient(at 15% 10%, rgba(253, 230, 211, 0.65) 0px, transparent 48%),
+    radial-gradient(at 85% 18%, rgba(253, 224, 171, 0.55) 0px, transparent 48%),
+    radial-gradient(at 50% 50%, rgba(255, 247, 237, 0.7) 0px, transparent 52%),
+    radial-gradient(at 15% 82%, rgba(254, 235, 200, 0.5) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(253, 214, 170, 0.45) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
@@ -94,4 +97,29 @@ button {
 
 .light-card:hover {
   box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
+/* ---- Tools marquee (pure CSS, pauses on hover) ---- */
+.tools-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.tools-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- Subtle paper-grain texture overlay ---- */
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
