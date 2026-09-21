@@ -186,58 +186,60 @@ export const EDUCATIONS: EducationItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "ghostdraft-pipeline",
-    title: "GhostDraft CCM Enterprise Automation Pipeline",
-    category: "Enterprise",
-    tagline: "Rule-Based XML/XSLT Transformation & Cloud S3 Archival Engine",
-    description: "High-throughput document composition platform connecting enterprise P&C Insurance modules with dynamic PDF and multi-channel rendering engines.",
-    longDescription: "Orchestrates end-to-end document lifecycles for high-volume insurance carriers at Sapiens. Receives transactional XML payloads from Policy, Billing, and Claims systems, executes rule-based XSLT data transformations, applies dynamic template branding, and automatically persists compliance-ready documents directly into AWS S3 storage with comprehensive audit logging.",
-    technologies: ["GhostDraft CCM", "XSLT 2.0", "Java", "XML/XPath", "AWS S3", "REST/SOAP", "P&C Insurance"],
-    metrics: "Zero-defect delivery • 100% compliance mapping",
+    id: "token-cost-calculator",
+    title: "Token Cost Calculator",
+    category: "Full-Stack",
+    tagline: "Compare 100+ LLM API Prices with Caching & Batch Discounts",
+    description: "Interactive web app that simulates, compares, and forecasts LLM API costs across 100+ AI models — factoring prompt caching discounts, batch processing, and monthly request scale.",
+    longDescription: "A public calculator that helps developers and product teams forecast LLM infrastructure spend. Users tune workload parameters (input, cached, and output tokens, request scale, batch mode) and pick models from a 100+ model pricing registry to get a side-by-side cost leaderboard with exact spend and caching discounts — backed by a comprehensive developer guide and FAQ knowledge base on token billing and cost optimization.",
+    technologies: ["JavaScript", "Interactive Calculator", "100+ Model Pricing Database", "SEO Content"],
+    metrics: "Live on Web • 100+ models compared",
     featured: true,
     status: "Production",
+    demoUrl: "https://tokencostcalculatorllm.com/",
     architectureHighlights: [
-      "Stateless XSLT transformation pipeline handling complex multi-tier nested XML payloads",
-      "Dynamic document conditional branching based on policy risk levels and state-specific clauses",
-      "Secure AWS S3 presigned URL integration for real-time customer retrieval",
-      "Automated payload sanitization and error log parsing for instant glitch isolation"
+      "Workload simulator with presets that auto-fill token estimates for common AI workloads",
+      "Model selection registry comparing 100+ models side-by-side on price, cache rates, and context",
+      "Cost comparison leaderboard ranking models by exact monthly spend with caching discounts",
+      "Long-form developer guide and FAQ knowledge base driving organic search traffic"
     ]
   },
   {
-    id: "ai-agent-copilot",
-    title: "Autonomous AI Agent Workflow & Schema Copilot",
+    id: "isha-experiences",
+    title: "Isha Experiences",
     category: "Full-Stack",
-    tagline: "LLM Agent Orchestrator, Schema Transformation & Synthetic Testing",
-    description: "Production-grade autonomous AI agent system engineered with LLM tool-calling to automate schema mapping, code generation, and regression testing.",
-    longDescription: "Engineered by applying advanced agentic architectures (certified by Ed Donner). Deploys multi-agent collaborative workflows that ingest enterprise JSON/XML schemas, orchestrate LLM tool-calling chains, generate validated mapping code, and automatically generate synthetic payloads to stress-test system boundary conditions.",
-    technologies: ["AI Agents", "Python", "TypeScript", "LLM APIs", "LangChain", "Next.js", "Vector DBs"],
-    metrics: "Live on Web • 85% accelerated mapping",
+    tagline: "Independent Community Archive of Meditator Stories & Reviews",
+    description: "Community platform documenting 340+ authentic meditator stories across 28+ countries — with anonymous story submissions, verified transformation threads, and program reviews.",
+    longDescription: "An independent, community-driven archive where practitioners share uncensored experiences of Isha programs like Inner Engineering, Bhava Spandana, and Shoonya. Features a searchable story archive with program and year filters, appreciation counts, verified before/after transformation threads, anonymous story submission with emails kept private, and an FAQ knowledge base — explicitly independent of the Isha Foundation.",
+    technologies: ["JavaScript", "Community Platform", "Anonymous Submissions", "SEO Content"],
+    metrics: "Live on Web • 340+ stories • 28+ countries",
     featured: true,
     status: "Production",
+    demoUrl: "https://ishaexperiences.com",
     architectureHighlights: [
-      "Multi-agent autonomous workflow utilizing dynamic tool-calling and self-correction loops",
-      "Real-time AST schema analysis and automatic transformation logic synthesis",
-      "Synthetic test payload generation simulating edge-case enterprise data scenarios",
-      "Streaming responses with low-latency client-side state synchronization"
+      "Story archive with program, year, and location filters plus appreciation counts",
+      "Verified before/after transformation threads documenting practitioner journeys",
+      "Anonymous story submission flow with submitter emails kept strictly private",
+      "FAQ and guide content covering programs, daily sadhana, and volunteering"
     ]
   },
   {
-    id: "system-integration-hub",
-    title: "Enterprise System Integration & Operational Hub",
+    id: "fers-calculator",
+    title: "FERS Retirement Calculator",
     category: "Full-Stack",
-    tagline: "Secure REST/SOAP Integration, Token Auth & Resource Orchestration",
-    description: "Full-stack operational hub connecting distributed services, orchestrating transactional workflows, and providing real-time telemetry.",
-    longDescription: "Engineered a robust system integration platform featuring fine-grained Role-Based Access Control (RBAC), JWT token authentication, real-time inventory tracking, member profile lifecycle management, and relational database persistence with strict constraint validations.",
-    technologies: ["React", "Node.js", "Java / Spring Boot", "JWT Auth", "SQL Database", "REST APIs", "Tailwind CSS"],
-    metrics: "Sub-100ms latency • Live Production Deployment",
+    tagline: "Official OPM-Formula Pension Estimator for Federal Employees",
+    description: "Free calculator that instantly estimates FERS pensions using the official OPM formula — High-3 salary, years of service, and multipliers, with eligibility and supplement checks.",
+    longDescription: "A privacy-first web tool for U.S. federal employees to estimate their FERS basic benefit pension in seconds. Applies the official OPM formula (High-3 x service years x 1.0%/1.1% multiplier), handles special provisions for law enforcement, firefighters, and air traffic controllers (1.7% multiplier), checks minimum retirement age eligibility and early-retirement reductions, estimates the FERS Special Retirement Supplement, and credits unused sick leave — all computed client-side with nothing stored. Includes a complete guide and FAQ on FERS rules.",
+    technologies: ["JavaScript", "Client-Side Computation", "OPM Formula Engine", "SEO Content"],
+    metrics: "Live on Web • 100% private, browser-only",
     featured: true,
     status: "Production",
-    github: "https://github.com/",
+    demoUrl: "https://ferscalculator.com",
     architectureHighlights: [
-      "JWT-based stateless authentication with token rotation and permission middleware",
-      "Optimized SQL indexing and relational schema for high-concurrency transactional workflows",
-      "Responsive operational dashboard with real-time asset tracking and telemetry",
-      "Automated event-driven notification triggers and external service webhooks"
+      "Official OPM formula engine: High-3 x service years x multiplier (1.0% / 1.1% / 1.7%)",
+      "Eligibility checks for MRA, early-retirement reductions, and FERS Supplement (SRS)",
+      "Special provisions support for law enforcement, firefighters, and air traffic controllers",
+      "100% client-side computation — all inputs stay in the browser, nothing is stored"
     ]
   }
 ];

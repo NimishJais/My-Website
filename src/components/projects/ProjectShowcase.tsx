@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import { SectionHeading } from "../ui/SectionHeading";
 import { PROJECTS, ProjectItem } from "@/data/portfolioData";
-import { 
-  Layers, 
-  CheckCircle2, 
-  Clock, 
+import {
+  Layers,
+  CheckCircle2,
+  Clock,
   ArrowRight,
+  ExternalLink,
   X
 } from "lucide-react";
 
@@ -37,13 +38,12 @@ export function ProjectShowcase() {
                   </span>
 
                   <span
-                    className={`text-xs px-2.5 py-0.5 rounded-full flex items-center gap-1.5 font-medium ${
-                      project.status === "Production"
-                        ? "bg-teal-50 text-teal-800 border border-teal-200"
-                        : project.status === "Completed"
+                    className={`text-xs px-2.5 py-0.5 rounded-full flex items-center gap-1.5 font-medium ${project.status === "Production"
+                      ? "bg-teal-50 text-teal-800 border border-teal-200"
+                      : project.status === "Completed"
                         ? "bg-sky-50 text-sky-800 border border-sky-200"
                         : "bg-purple-50 text-purple-800 border border-purple-200"
-                    }`}
+                      }`}
                   >
                     {project.status === "Production" ? (
                       <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
@@ -105,6 +105,18 @@ export function ProjectShowcase() {
                       <span>Deep Dive Details</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
+
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-teal-700 hover:text-teal-800 transition-colors"
+                      >
+                        <span>Visit Live</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -166,7 +178,18 @@ export function ProjectShowcase() {
               </div>
             </div>
 
-            <div className="flex justify-end pt-3 border-t border-slate-100">
+            <div className="flex justify-end gap-3 pt-3 border-t border-slate-100">
+              {selectedProject.demoUrl && (
+                <a
+                  href={selectedProject.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <span>Visit Live Site</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
               <button
                 onClick={() => setSelectedProject(null)}
                 className="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold"

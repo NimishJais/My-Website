@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/hero/Hero";
-import { ToolsMarquee } from "@/components/hero/ToolsMarquee";
 import { FloatingTechIcons } from "@/components/FloatingTechIcons";
 import { AboutPhilosophy } from "@/components/about/AboutPhilosophy";
 import { ExperienceTimeline } from "@/components/experience/ExperienceTimeline";
@@ -19,6 +18,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-transparent text-slate-900 relative selection:bg-blue-100 selection:text-blue-900">
+      {/* Subtle paper-grain texture over the page */}
+      <div aria-hidden className="paper-grain pointer-events-none fixed inset-0 z-[60] opacity-[0.035]" />
+
+      {/* Scattered floating tech icons along the page edges */}
+      <FloatingTechIcons />
+
       {/* Navigation */}
       <Navbar onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 
