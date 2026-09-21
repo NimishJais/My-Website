@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,7 +54,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="bg-slate-50 text-slate-900 antialiased selection:bg-teal-100 selection:text-teal-900">
+      <body className="bg-slate-50 text-slate-900 antialiased selection:bg-amber-300 selection:text-amber-950">
+        <ScrollProgress />
         {children}
       </body>
     </html>
